@@ -1,32 +1,46 @@
-console.log("Before");
-loadUser(1, function (user) {
-    console.log('User', user);
-    getUserAddresses(user.id, function (add) {
-        console.log('Address\'s', add);
-        getUserCity(add[0], function(city) {
-            console.log('City', city);       
-        });
-    });
-});
-console.log("After");
-
-function loadUser(id, callback) {
+console.log('Before');
+function getUser(id) {
     setTimeout(() => {
-        console.log("Loading User...");
-        callback({ id: id, name: 'Vijaykumar' });
-    }, 200);
+        console.log('Getting user from database')
+    }, 2000);
+}
+console.log('After');
+
+function getUser(id) {
+    setTimeout(() => {
+        console.log('Getting user from database')
+    }, 2000);
 }
 
-function getUserAddresses(userId, callback) {
-    setTimeout(() => {
-        console.log("Reading User data...");
-        callback(['add1', 'add2', 'add3']);
-    }, 200);
-}
+// console.log('Before');
+// getUser(1, function(user){
+//     console.log('User', user);
+//     getRepos(user.gitHubUserName, function(repos) {
+//         console.log('Repos', repos)
+//         getCommits(repos[0], function(commit) {
+//             console.log(commit);
+//         })
+//     })
+// });
+// console.log('After');
 
-function getUserCity(userAdd, callback) {
-    setTimeout(() => {
-        console.log("Reading user city...");
-        callback('city1');
-    }, 200);
-}
+// function getUser(id, callback) {
+//     setTimeout(() => {
+//         console.log('Getting user from database...');
+//         callback({id: id, gitHubUserName: 'Vijaykumar'});
+//     }, 2000);
+// }
+
+// function getRepos(gitHubUserName, callback) {
+//     setTimeout(() => {
+//         console.log('Getting repos for user...');
+//         callback(['repo1', 'repo2', 'repo3']);
+//     }, 2000);
+// }
+
+// function getCommits(repo, callback) {
+//     setTimeout(() => {
+//         console.log('Getting commits...');
+//         callback(['commit1', 'commit2'])
+//     }, 2000);
+// }
